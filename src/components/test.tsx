@@ -21,6 +21,7 @@ class Test extends React.Component {
             {this.props.customList.map((item:any) => 
               <div key={item.id}>{item.name}</div>
             )}
+            <i className="iconfont icon-zhangshangcaifuyemianshoujiban243"/>
         </div>
     );
   }
