@@ -26,4 +26,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-@import "./static/font/iconfont.css";
+/* @import "./static/font/iconfont.css"; */
