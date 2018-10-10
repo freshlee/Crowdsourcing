@@ -1,7 +1,7 @@
 // import {connect} from 'react-redux';
 // import { DatePicker, LocaleProvider, message } from 'antd';
 import * as React from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Home from './page/home/index';
 import SearchList from './page/searchList';
@@ -13,12 +13,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Route component={Home} Path="/" />
-          <Route component={SearchList} Path="/" />
+          <div>
+            <Route exact={true} component={Home} path="/" />
+            <Route component={SearchList} path="/SearchList" />
+            {/* <NavLink to="/" >首页</NavLink>
+            <NavLink to="/SearchList">搜索栏</NavLink> */}
+          </div>
         </Router>
-        <Link to="/Home" />
-        <Link to="/SearchList" />
-      </div>
+      </div>  
     );
   }
 }

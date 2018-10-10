@@ -1,10 +1,12 @@
+import { Button } from 'antd';
 import * as React from 'react';
-
+import './index.css';
 class Home extends React.Component {
     public render() {
       return (
         <div className="Home">
-            首页
+        asdsad  
+            <Button>sada</Button>
         </div>
       );
     }
