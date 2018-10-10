@@ -1,7 +1,14 @@
 import * as React from 'react';
+// import {connect} from 'react-redux';
 import './App.css';
+import Test from './components/test';
 
 import logo from './logo.svg';
+// const mapStateToProps = (state) => {
+//   return {
+//       customList: state.customList
+//   };
+// };
 
 class App extends React.Component {
   public render() {
@@ -14,9 +21,9 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Test/>
       </div>
     );
   }
 }
-
 export default App;

@@ -1,4 +1,7 @@
-const login = (state = [], action:any) => { // 这里使用ES6的语法，如果state是undefined的话，给state设置一个默认值；为什么要这样？因为reducer和store创建的时候会默认的发送初始化的action和用于检测的action；如果state是undefined，而reducer里又没有处理，直接返回了，就会在控制台里报错
+const customList = (state = [{
+    id: 0,
+    name: 'test'
+}], action:any) => { // 这里使用ES6的语法，如果state是undefined的话，给state设置一个默认值；为什么要这样？因为reducer和store创建的时候会默认的发送初始化的action和用于检测的action；如果state是undefined，而reducer里又没有处理，直接返回了，就会在控制台里报错
     switch (action.type) {
         /**
          * 添加customItem
@@ -30,4 +33,4 @@ const login = (state = [], action:any) => { // 这里使用ES6的语法，如果
     }
 };
 
-export default login;
+export default customList;
