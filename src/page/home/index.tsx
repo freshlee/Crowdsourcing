@@ -1,6 +1,6 @@
 import { Button, Icon, NavBar } from 'antd-mobile';
-// import 'antd-mobile/lib/button/style/css';
 import * as React from 'react';
+// import 'antd-mobile/lib/button/style/css';
 import './index.css';
 class Home extends React.Component {
     public render() {
