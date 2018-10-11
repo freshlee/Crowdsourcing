@@ -27,8 +27,16 @@
     "@types/react-redux": "^6.0.9",
     "@types/react-router-dom": "^4.3.1",
     "babel-plugin-import": "^1.9.1",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "react-app-rewired": "^1.6.2",
+    "style-loader": "^0.23.1",
     "ts-import-plugin": "^1.5.5",
     "typescript": "^3.1.1"
+  },
+  "theme": {
+    "brand-primary": "red",
+    "color-text-base":  "#333"
   }
 }
