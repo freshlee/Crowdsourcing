@@ -22,6 +22,16 @@
   font-size: large;
 }
 
+body{
+  margin: 0 !important;
+  font-family: PingFangSC-Regular;
+}
+
+@font-face{
+  font-family: PingFangSC-Regular, sans-serif;
+  src: url('static/font/pingfang.ttf');
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

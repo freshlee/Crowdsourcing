@@ -101,6 +101,8 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      'static': path.resolve(__dirname, '../', 'src/static/'),
+      'src': path.resolve(__dirname, '../', 'src/')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -221,7 +223,16 @@ module.exports = {
               },
               {
                 loader: require.resolve('less-loader'), 
-                options: {modifyVars: theme}
+                options: {
+                  modifyVars: theme
+                }
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  // it need a absolute path
+                  resources: [path.resolve(__dirname, '../', 'src/less/common.less')]
+                }
               }
             ]
           },
@@ -252,6 +263,7 @@ module.exports = {
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.
+    // {name: 'less-theme', path: 'src/less/common.less'},
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
