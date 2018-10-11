@@ -26,5 +26,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-@import '~antd/dist/antd.css';
 @import "./static/font/iconfont.css";
