@@ -1,13 +1,15 @@
 // import {connect} from 'react-redux';
 // import { DatePicker, LocaleProvider, message } from 'antd';
-import 'antd-mobile/dist/antd-mobile.less'; 
+import 'antd-mobile/dist/antd-mobile.less';
 import * as React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import fix from './lib/flexible';
 import Home from './page/home/index';
 import SearchList from './page/searchList';
 import './theme.less';
 
+fix()
 
 class App extends React.Component {
   public render() {

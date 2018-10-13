@@ -43,6 +43,12 @@ import 有a-z的的字母排序规则，json同理
     import './theme.less';
 ```
 
+tslint强类型检测
+
+```tsx
+    docEl!.style!.fontSize = fz + 'px';  
+```
+
 ### 项目目录
 
 ```

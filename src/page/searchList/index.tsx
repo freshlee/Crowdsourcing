@@ -5,7 +5,6 @@ class SearchList extends React.Component {
       return (
         <div className="Home">
             搜索列表
-            xinxiede
         </div>
       );
     }
