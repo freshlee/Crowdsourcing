@@ -1,33 +1,59 @@
-import { Icon, NavBar } from 'antd-mobile';
+import { SearchBar } from 'antd-mobile';
 import * as React from 'react';
-import logo from 'static/img/prettygril.jpg';
-// import 'antd-mobile/lib/button/style/css';
+import {connect} from 'react-redux';
+import {store} from 'src/store'
+import huanyucheng from 'static/img/huanyucheng.jpg'
+import lingnan from 'static/img/lingnan.jpg'
 import '../../static/animation/vivify.min.css';
 import './index.less';
-class Home extends React.Component {
+const mapStateToProps = (state: any) => {
+  return {
+      meta: state.meta
+  };
+};
+class Home extends React.Component<any> {
+    // public componentDidMount () {
+    // }
     public render() {
+      // tslint:disable-next-line:no-console
+      console.log(this.props.meta, 1)
+      store.subscribe(() =>
+      // tslint:disable-next-line:no-console
+        console.log(store.getState(), 'update')
+      )
+      store.dispatch({
+        text: 'hehe',
+        type: 'update'
+      })
+      // tslint:disable-next-line:no-console
+      console.log(this.props.meta, '2')
       return (
         <div className="Home">
-            <NavBar
-              icon={<Icon type="left" />}
-            />
-            <div className="map">
-              <div className="popup-msg vivify driveInTop">
-                <div className="protrait">
-                  <img src={logo} alt=""/>
-                </div>
-                <div className="content-wrap">
-                  <div className="content">
-                    看来这家店不错哦看来这家店不错哦看来这家店不错哦
-                  看来这家店不错哦
-                  </div>
-                {/* driveInTop */}
+            {/* {this.props.location.pathname} */}
+            <SearchBar/>
+            <div className="card" style={{background: `url(${huanyucheng})`}}>
+              <span className="title">岭南新天地</span>
+              <div className="desc">LINGNAN XINTIANDI </div>
+              <div className="bottom-wrap">
+                <div className="bottom">
+                  <span>热度: 3400人/天</span>
+                  <span>距离您: 300m</span> 
                 </div>
               </div>
             </div>
+            <div className="card" style={{background: `url(${lingnan})`}}>
+              <span className="title">串胡同</span>
+              <div className="desc">BEIJING HUTONG</div>
+              <div className="bottom-wrap">
+                <div className="bottom">
+                  <span>热度: 3400人/天</span>
+                  <span>距离您: 300m</span>
+                </div>
+              </div>
+            </div>    
         </div>
       );
     }
   }
 
-  export default Home
+  export default connect(mapStateToProps)(Home)

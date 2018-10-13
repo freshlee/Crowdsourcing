@@ -5,6 +5,21 @@
 
 ### 项目启动
 
+> pm2 启动
+```
+
+npm install pm2 -g  #安装pm2进程管理工具
+
+pm2 start scripts/start.js --name <your pid name> #启动项目
+
+pm2 list #停止列表
+
+pm2 stop <your pid name> #停止进程
+
+pm2 delete <your pid name> #删除进程
+
+```
+
 > 开发环境
 
 ```

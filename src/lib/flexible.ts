@@ -9,8 +9,10 @@ export default () => {
           if (!clientWidth) { return; }
           let fz;
           const width = clientWidth;
-          fz = 16 * width / 375;
-          docEl!.style!.fontSize = fz + 'px';   
+          fz = 100 * width / 375;
+          docEl!.style!.fontSize = fz + 'px';  
+          // tslint:disable-next-line:no-console
+          console.log(fz, width, docEl!.style!.fontSize, 'fz')
         };
       
         if (!doc.addEventListener) { return; }

@@ -28,7 +28,7 @@ body{
 }
 
 @font-face{
-  font-family: PingFangSC-Regular, sans-serif;
+  font-family: PingFangSC;
   src: url('static/font/pingfang.ttf');
 }
 

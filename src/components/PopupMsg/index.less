@@ -1,0 +1,42 @@
+@pic-size: 60px;
+.popup-msg{
+    background: #fff;
+    margin-top: 40px;
+    margin-left: 20px;
+    height: @pic-size;
+    // width: 200px;
+    max-width: 250px;
+    display: inline-block;
+    padding-left: @pic-size;
+    position: relative;
+    border-radius: 3px;
+    .protrait{
+        position: absolute;
+        padding: 6px;
+        box-sizing: border-box;
+        height: @pic-size;
+        width: @pic-size;
+        left: 0;
+        top: 0;
+        img {
+            height: 100%;
+            width: 100%;
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+    .content-wrap{
+        padding: 5px 15px 5px 10px;
+        height: 100%;
+        box-sizing:border-box;
+        overflow: hidden;
+        .content {
+            // height: 100%;
+            line-height: 22px;
+            text-align: left;
+            font-family: "PingFangSC-Regular";
+            .ellipse(2);
+        }
+    }
+}

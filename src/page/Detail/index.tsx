@@ -1,6 +1,6 @@
 import * as React from 'react';
-
-class SearchList extends React.Component {
+import './index.less';
+class Detail extends React.Component {
     public render() {
       return (
         <div className="Home">
@@ -10,4 +10,4 @@ class SearchList extends React.Component {
     }
   }
 
-  export default SearchList
+  export default Detail

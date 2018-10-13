@@ -1,44 +1,47 @@
 .Home {
     background: #EEF3F9;
     @pic-size: 60px;
-    .popup-msg{
-        background: #fff;
-        margin-top: 40px;
-        margin-left: 20px;
-        height: @pic-size;
-        // width: 200px;
-        max-width: 250px;
+    font-family: PingFangSC !important;
+    .card {
         display: inline-block;
-        padding-left: @pic-size;
+        width: 3.75rem;
+        height: 2rem;
+        // background: url("~static/img/lingnan.jpg");
+        filter: grayscale(40%);
+        background-size: 100%;
         position: relative;
-        border-radius: 3px;
-        .protrait{
-            position: absolute;
-            padding: 6px;
-            box-sizing: border-box;
-            height: @pic-size;
-            width: @pic-size;
-            left: 0;
-            top: 0;
-            img {
-                height: 100%;
-                width: 100%;
-                display: block;
-                border-radius: 50%;
-                overflow: hidden;
-            }
+        // img {
+        //     height: 100%;
+        //     width: 100%;
+        // }
+        
+        .title {
+            display: inline-block;
+            margin-top: .63rem;
+            font-size: 0.22rem;
+            color: #fff;
+            font-family: PingFangSC !important;
         }
-        .content-wrap{
-            padding: 5px 15px 5px 10px;
-            height: 100%;
-            box-sizing:border-box;
-            overflow: hidden;
-            .content {
-                // height: 100%;
-                line-height: 22px;
-                text-align: left;
-                font-family: "PingFangSC-Regular";
-                .ellipse(2);
+        .desc {
+            // display: inline-block;
+            margin-top: .06rem;
+            font-family: PingFangSC;
+            color: #fff;
+            font-size: .14rem;
+            font-weight: bold;
+        }
+        .bottom-wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            .bottom {
+                padding: 0 .1rem;
+                height: .35rem;
+                line-height: .35rem;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
             }
         }
     }
