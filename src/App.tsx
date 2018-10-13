@@ -3,25 +3,29 @@
 import {Icon ,NavBar} from 'antd-mobile';
 import 'antd-mobile/dist/antd-mobile.less';
 import * as React from 'react';
-import * as browserHistory from 'react-router';
+import {connect} from 'react-redux';
+// import * as browserHistory from 'react-router';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import fix from './lib/flexible';
 import Detail from './page/Detail';
 import Home from './page/home/index';
 import './theme.less';
-
+const mapStateToProps = (state: any) => {
+  return {
+      meta: state.meta
+  };
+};
 fix()
 
-class App extends React.Component {
+class App extends React.Component<any, any> {
   public render() {
-    // tslint:disable-next-line:no-console
-    console.log(browserHistory)
+    // const state = this.state
     return (
       <div className="App">
         <NavBar
           icon={<Icon type="left" />}>
-          首页
+          {this.props.meta.name}
         </NavBar>
         <Router>
           <div>
@@ -35,4 +39,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default connect(mapStateToProps)(App);

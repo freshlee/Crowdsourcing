@@ -1,7 +1,6 @@
 import { SearchBar } from 'antd-mobile';
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {store} from 'src/store'
 import huanyucheng from 'static/img/huanyucheng.jpg'
 import lingnan from 'static/img/lingnan.jpg'
 import '../../static/animation/vivify.min.css';
@@ -11,22 +10,21 @@ const mapStateToProps = (state: any) => {
       meta: state.meta
   };
 };
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    changeTitle: (...args: []) => dispatch(...args)
+  }
+}
 class Home extends React.Component<any> {
-    // public componentDidMount () {
-    // }
-    public render() {
-      // tslint:disable-next-line:no-console
-      console.log(this.props.meta, 1)
-      store.subscribe(() =>
-      // tslint:disable-next-line:no-console
-        console.log(store.getState(), 'update')
+    public componentWillMount () {
+      this.props.changeTitle(
+        {
+          text: '首页',
+          type: 'update'
+        }
       )
-      store.dispatch({
-        text: 'hehe',
-        type: 'update'
-      })
-      // tslint:disable-next-line:no-console
-      console.log(this.props.meta, '2')
+    }
+    public render() {
       return (
         <div className="Home">
             {/* {this.props.location.pathname} */}
@@ -56,4 +54,4 @@ class Home extends React.Component<any> {
     }
   }
 
-  export default connect(mapStateToProps)(Home)
+  export default connect(mapStateToProps, mapDispatchToProps)(Home)

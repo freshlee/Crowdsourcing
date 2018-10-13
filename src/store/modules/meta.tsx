@@ -2,15 +2,13 @@ interface IMetaType {
     name: string
 }
 const meta = ((state: IMetaType = {
-    name: ''
+    name: '首页'
 }, action: any) => {
     let res: IMetaType;
     switch (action.type) {
         case ('update'):
-        // tslint:disable-next-line:no-console
-        console.log(action.type, 'action.type') 
             res = {
-                name: '2222'
+                name: action.text
             }
             break;
         case ('delete'):

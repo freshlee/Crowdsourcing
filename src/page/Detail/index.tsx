@@ -1,7 +1,32 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import './index.less';
-class Detail extends React.Component {
+const mapStateToProps = (state: any) => {
+  return {
+      meta: state.meta
+  };
+};
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    changeTitle: (...args: []) => dispatch(...args)
+  }
+}
+class Detail extends React.Component<any, any> {
+  public componentWillMount () {
+    this.props.changeTitle(
+      {
+        text: '详情页',
+        type: 'update'
+      }
+    )
+  }
     public render() {
+      // tslint:disable-next-line:no-console
+      console.log('this.props.store')
+      // store.dispatch({
+      //   text: '详情页',
+      //   type: 'update'
+      // })
       return (
         <div className="Home">
             搜索列表
@@ -10,4 +35,4 @@ class Detail extends React.Component {
     }
   }
 
-  export default Detail
+  export default connect(mapStateToProps, mapDispatchToProps)(Detail)
