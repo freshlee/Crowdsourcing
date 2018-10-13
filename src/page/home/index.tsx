@@ -1,4 +1,5 @@
 import { SearchBar } from 'antd-mobile';
+// import createHistory from 'history/createBrowserHistory'
 import * as React from 'react';
 import {connect} from 'react-redux';
 import huanyucheng from 'static/img/huanyucheng.jpg'
@@ -24,12 +25,20 @@ class Home extends React.Component<any> {
         }
       )
     }
+    public toLink () {
+      // tslint:disable-next-line:no-console
+      // console.log(withRouter)
+      // const history = createHistory()
+      return () => {
+        this.props.history.push('/Detail')
+      }
+    }
     public render() {
       return (
         <div className="Home">
             {/* {this.props.location.pathname} */}
             <SearchBar/>
-            <div className="card" style={{background: `url(${huanyucheng})`}}>
+            <div className="card" style={{background: `url(${huanyucheng})`}} onClick={this.toLink.call(this)}>
               <span className="title">岭南新天地</span>
               <div className="desc">LINGNAN XINTIANDI </div>
               <div className="bottom-wrap">

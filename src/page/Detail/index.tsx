@@ -21,12 +21,6 @@ class Detail extends React.Component<any, any> {
     )
   }
     public render() {
-      // tslint:disable-next-line:no-console
-      console.log('this.props.store')
-      // store.dispatch({
-      //   text: '详情页',
-      //   type: 'update'
-      // })
       return (
         <div className="Home">
             搜索列表

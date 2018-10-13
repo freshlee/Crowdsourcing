@@ -5,7 +5,7 @@ import 'antd-mobile/dist/antd-mobile.less';
 import * as React from 'react';
 import {connect} from 'react-redux';
 // import * as browserHistory from 'react-router';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import fix from './lib/flexible';
 import Detail from './page/Detail';
@@ -19,6 +19,9 @@ const mapStateToProps = (state: any) => {
 fix()
 
 class App extends React.Component<any, any> {
+  public componentWillReceiveProps() {
+    this.render()
+  }
   public render() {
     // const state = this.state
     return (
@@ -29,8 +32,10 @@ class App extends React.Component<any, any> {
         </NavBar>
         <Router>
           <div>
+          <Switch>
             <Route exact={true} component={Home} path="/" />
             <Route component={Detail} path="/Detail" />
+          </Switch>
             {/* <NavLink to="/" >首页</NavLink>
             <NavLink to="/SearchList">搜索栏</NavLink> */}
           </div>
